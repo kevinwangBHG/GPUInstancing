@@ -81,4 +81,16 @@ public class MoveCamera : MonoBehaviour
             transform.Translate(move, Space.World);
         }
     }
+
+    public void ZoomIn()
+    {
+        Vector3 move = zoomSpeed * transform.forward;
+        transform.Translate(move, Space.World);
+    }
+
+    public void ZoomOut()
+    {
+        Vector3 move = -zoomSpeed * transform.forward;
+        transform.Translate(move, Space.World);
+    }
 }
