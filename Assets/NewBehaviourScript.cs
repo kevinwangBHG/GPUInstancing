@@ -13,13 +13,20 @@ public class NewBehaviourScript : MonoBehaviour {
             for (int j = 0; j < 100; j++)
             {
                 var instance = Instantiate(prefab) as GameObject;
-                instance.transform.position = new Vector3(j * 3, i * 3, 0);
+                instance.transform.position = new Vector3(j * 5, 0, i * 5);
+                instance.transform.localScale = GetRandomScale();
             }
         }
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    Vector3 GetRandomScale()
+    {
+        float scale = Random.Range(1.2f, 4f);
+        return new Vector3(scale, scale, scale);
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
